@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Image Slideshow</title>
+        <script>
+            var i=0
+            var j=1
+            var images=[]
+            var str=[]
+            images[0] = "./Images/1.jpeg";
+            images[1] = "./Images/2.jpg";
+            images[2] = "./Images/3.jfif";
+            images[3] = "./Images/4.jpg";
+            str[0] = "Tallest building in the world";
+            str[1] = "Biggest stadium in the world";
+            str[2] = "Largest airport in the world";
+            str[3] = "Largest ferry wheel in the world";
+
+            function changeImg(){
+                document.slide.src = images[i];
+
+                if(i==(images.length)+1)
+                {
+                    document.getElementById("paragraph").innerHTML=str[i+1]
+                }
+                else{
+                    document.getElementById("paragraph").innerHTML=str[i]
+                }
+
+                if(i!==(images.length)-1){
+                    i++;
+                }
+                else{
+                    i=0;
+                }
+            }
+
+            function addimage(){
+                var x = prompt("Enter the source of the image: ");
+                images=[images.length]=x;
+                var y=prompt("Enter the destination of the image: ");
+                str[images.length-1]=y;
+
+            }
+            window.onload=changeImg
+
+        </script>
+    </head>
+<body>
+    <center> <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;font-weight: 400;text-decoration: underline;">Image slider</h1></center><br>
+    <center> <img name="slide" width="600" height="350" /></center><br>
+    <center><p id="paragraph" style="font-family: poppins; color: red;"></p></center>
+    <center><button type="button" onclick="changeImg()" style="background:#09cf24;color:white;margin-bottom: 10px;">NEXT</button></center></body></b></button></center>
+    <center><button type="button" onclick="addimage()" style="background:#1378d6;color:white;padding-left: 10px;padding-right: 10px;">ADD</button></center></body></b></button></center>
+</body> 
+
+</html>
